@@ -19,19 +19,19 @@
       --px: 'Press Start 2P', monospace;
       /* ── SKY THEME (default) ── */
       --bg:      #86c9f2;
-      --surface: rgba(255,255,255,.5);
-      --card:    #fffdf7;
-      --card2:   #e9f3fc;
-      --border:  #243a66;
-      --green:   #0a8f4f;
-      --yellow:  #c8920a;
-      --orange:  #e85a2a;
-      --red:     #d61f3a;
-      --blue:    #1c7fd6;
-      --purple:  #9b30e0;
-      --text:    #18213f;
-      --muted:   #44507e;
-      --scanline: rgba(0,0,0,.035);
+      --surface: #c8e6f5;
+      --card:    #ffffff;
+      --card2:   #e4f2fb;
+      --border:  #0f1e40;
+      --green:   #045e32;
+      --yellow:  #6e4400;
+      --orange:  #b83010;
+      --red:     #aa1030;
+      --blue:    #0a50a0;
+      --purple:  #6010aa;
+      --text:    #080e20;
+      --muted:   #162244;
+      --scanline: rgba(0,0,0,.025);
       --bg-pattern: none;
       --bg-size: auto;
     }
@@ -136,6 +136,13 @@
       100%{ transform:translateY(100vh) rotate(720deg); opacity:0; }
     }
     @keyframes pulse-glow {
+      0%,100%{ text-shadow: 3px 3px 0 rgba(0,0,0,.15); }
+      50%    { text-shadow: 3px 3px 0 rgba(0,0,0,.25), 0 0 16px rgba(0,0,0,.1); }
+    }
+    [data-theme="dark"] .hero-logo {
+      animation: pulse-glow-dark 3s ease-in-out infinite;
+    }
+    @keyframes pulse-glow-dark {
       0%,100%{ text-shadow: 0 0 6px var(--green); }
       50%    { text-shadow: 0 0 18px var(--green), 0 0 32px rgba(0,255,136,.4); }
     }
@@ -185,7 +192,7 @@
 
     /* Section scaffold */
     .sec { padding: 80px 24px; }
-    .sec-surface { background: var(--surface); }
+    .sec-surface { background: var(--surface); backdrop-filter: none; }
     .sec-inner { max-width: 1100px; margin: 0 auto; }
 
     .sec-badge {
